@@ -43,7 +43,7 @@
             // If SQL query works fine, execute it, otherwise... show me the error.
             if ($sql->execute()) {
                 $sql->execute();
-                echo "New record created successfully <a href='view.php'>return to table</a><br>";
+                echo "<span class='record-created'>New record created successfully &raquo; <a href='view.php'>Return to Table</a></span>";
             } else {
                 echo "Error: " . $mysqli->error;
             }
@@ -58,10 +58,19 @@
             ?>
             
             <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post" class="login card-panel">
-                name: <input type="text" name="name"><br>
-                friend: <input type="text" name="friend"><br>
-                isbn: <input type="text" name="isbn"><br>
-                <input type="submit" name="update" value="update">
+                <div class="form-group">
+                    <label for="name" class="sr-only">Your Name</label>
+                    <input type="text" name="name" placeholder="Your Name" />
+                </div>
+                <div class="form-group">
+                    <label for="name" class="sr-only">Your Friend</label>
+                    <input type="text" name="friend" placeholder="Your Friend" />
+                </div>
+                <div class="form-group">
+                    <label for="name" class="sr-only">ISBN</label>
+                    <input type="text" name="isbn" placeholder="ISBN" />
+                </div>
+                <input type="submit" name="update" value="Update">
             </form>
     
 </body>

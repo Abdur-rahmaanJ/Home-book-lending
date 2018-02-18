@@ -57,17 +57,20 @@ body {
 }
 
 .logged,
-.logged a {
+.logged a,
+.record-created a {
 	color: #fff;
 }
 
 .column,
-.update-link {
+.update-link,
+.record-created {
 	font-size: 2em;
 	color: #fff;
 }
 
-.update-link {
+.update-link,
+.record-created {
 	margin-bottom: 50px;
 	display: inline-block;
 }
