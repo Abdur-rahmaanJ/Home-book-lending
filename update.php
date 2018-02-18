@@ -8,8 +8,8 @@
 </head>
 <body>
     <?php
-        if(isset($_POST['update']))
-        {
+
+        if(isset($_POST['update'])) {
             
             session_start();
             
@@ -34,29 +34,36 @@
             $isbn = $_POST['isbn'];
             $friend = $_POST['friend'];
 
-            // Prepare query.
-            $sql = $mysqli->prepare("INSERT INTO $table (name, isbn, friend) VALUES (?, ?, ?)");
-            
-            // Bind parameters.
-            $sql->bind_param('sis', $name, $isbn, $friend);
-            
-            // If SQL query works fine, execute it, otherwise... show me the error.
-            
-            if($sql) {
-                $sql->execute();
-                echo "<span class='record-created'>New record created successfully &raquo; <a href='view.php'>Return to Table</a></span>";
-            } else {
-                echo "Error: " . $mysqli->error;
-            }
-            
-            // Close the connection.
-            $sql->close();
+            // If fields are not empty.
+            if(!empty($name) && !empty($isbn) && !empty($friend)) {
 
+                // Prepare query.
+                $sql = $mysqli->prepare("INSERT INTO $table (name, isbn, friend) VALUES (?, ?, ?)");
+                
+                // Bind parameters.
+                $sql->bind_param('sis', $name, $isbn, $friend);
+                
+                // If SQL query works fine, execute it, otherwise... show me the error.
+                if($sql) {
+                    $sql->execute();
+                    echo "<span class='record-created'>New record created successfully &raquo; <a href='view.php'>Return to Table</a></span>";
                 } else {
-                    //echo "ddd";
+                    echo "Error: " . $mysqli->error;
                 }
+                
+                // Close the connection.
+                $sql->close();
+            } else {
+                echo "<span class='record-created'>All fields are mandatory!</span>";
+            }
 
-            ?>
+
+
+        } else {
+            // 
+        }
+
+    ?>
             
             <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post" class="login card-panel">
                 <div class="form-group">
