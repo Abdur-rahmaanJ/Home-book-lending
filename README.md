@@ -2,10 +2,22 @@
 Know to which friend you lended books to ! A simple system using PHP and MySQL to fireup on your local machine !
 
 ## Requirements
-- PHP 5 (http://php.net/downloads.php)
+- PHP7 (http://php.net/downloads.php)
 - MySQL (https://dev.mysql.com/downloads/workbench/)
 
+## Todo
+- menupage
+- operations page
+
 ## Quickstart
+create table in db
+CREATE TABLE books (
+    ID int NOT NULL,
+    name varchar(255) NOT NULL,
+    isbn varchar(255),
+    friend varchar(255),
+    PRIMARY KEY (ID)
+);
 
 ## Contacts
 - Init Developer : Abdur-Rahmaan Janhangeer
