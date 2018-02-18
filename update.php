@@ -11,24 +11,44 @@ if(isset($_POST['update']))
 {
     
     session_start();
-    $name = $_POST['name'];
-    $friend = $_POST['friend'];
-    $isbn = $_POST['isbn'];
     
+    // Database connection data.
     $servername = "localhost";
     $username = $_SESSION['username'];
     $password = $_SESSION['password'];
     $dbname = "books_lending";
     $table = "books";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    $sql = "INSERT INTO $table (id, name, isbn, friend)
-    VALUES (null, '$name', '$isbn', '$friend')";
-    if ($conn->query($sql) === TRUE) {
+    // Connect to mysqli.
+    $mysqli = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection.
+    if (mysqli_connect_errno()) {
+        printf("Connect failed: %s\n", mysqli_connect_error());
+        exit();
+    }
+
+    // Grab data from the form. 
+    $name = $_POST['name'];
+    $isbn = $_POST['isbn'];
+    $friend = $_POST['friend'];
+
+    // Prepare query.
+    $sql = $mysqli->prepare("INSERT INTO $table (name, isbn, friend) VALUES (?, ?, ?)");
+    
+    // Bind parameters.
+    $sql->bind_param('sis', $name, $isbn, $friend);
+    
+    // If SQL query works fine, execute it, otherwise... show me the error.
+    if ($sql->execute()) {
+        $sql->execute();
         echo "New record created successfully <a href='view.php'>return to table</a><br>";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: " . $mysqli->error;
     }
+    
+    // Close the connection.
+    $sql->close();
     
 
 }else

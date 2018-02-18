@@ -21,7 +21,7 @@ if ($conn->connect_error) {
     session_start();
     $_SESSION['username'] = $username;
     $_SESSION['password'] = $password;
-     echo "logged in <a href='view.php'>view db</a>";
+    echo "logged in <a href='view.php'>view db</a>";
 }
 
 /*
