@@ -2,7 +2,12 @@
 Know to which friend you lended books to ! A simple system using PHP and MySQL to fireup on your local machine !
 
 ## Requirements
-- PHP7 (http://php.net/downloads.php)
+- PHP7 (http://php.net/downloads.php) 
+<pre>
+articles
+ (https://abdurrahmaanjanhangeer.wordpress.com/2018/02/18/php7-download-and-installing-instructions/)
+ (https://abdurrahmaanjanhangeer.wordpress.com/2018/02/16/simple-php-development/)
+</pre>
 - MySQL (https://dev.mysql.com/downloads/workbench/)
 
 ## Todo
@@ -10,7 +15,9 @@ Know to which friend you lended books to ! A simple system using PHP and MySQL t
 - operations page
 
 ## Quickstart
-create table in db
+PHP > php -S localhost:8000
+SQL create table in db
+<pre>
 CREATE TABLE books (
     ID int NOT NULL,
     name varchar(255) NOT NULL,
@@ -18,6 +25,7 @@ CREATE TABLE books (
     friend varchar(255),
     PRIMARY KEY (ID)
 );
+</pre>
 
 ## Contacts
 - Init Developer : Abdur-Rahmaan Janhangeer
