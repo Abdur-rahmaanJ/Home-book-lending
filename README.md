@@ -3,11 +3,9 @@ Know to which friend you lended books to ! A simple system using PHP and MySQL t
 
 ## Requirements
 - PHP7 (http://php.net/downloads.php) 
-<pre>
-articles
- (https://abdurrahmaanjanhangeer.wordpress.com/2018/02/18/php7-download-and-installing-instructions/)
- (https://abdurrahmaanjanhangeer.wordpress.com/2018/02/16/simple-php-development/)
-</pre>
+ [installation](https://abdurrahmaanjanhangeer.wordpress.com/2018/02/18/php7-download-and-installing-instructions/)
+ [environment](https://abdurrahmaanjanhangeer.wordpress.com/2018/02/16/simple-php-development/)
+
 - MySQL (https://dev.mysql.com/downloads/workbench/)
 
 ## Todo
