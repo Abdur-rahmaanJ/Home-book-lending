@@ -71,6 +71,6 @@ body {
 
 .update-link,
 .record-created {
-	margin-bottom: 50px;
+	margin: 50px 0;
 	display: inline-block;
 }

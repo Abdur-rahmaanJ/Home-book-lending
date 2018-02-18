@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
         echo "<span class='column'>" . $row["id"] . " &raquo; " . $row["name"] . " &raquo; " . $row["isbn"] . " &raquo; " . $row["friend"] . "</span><br>";
     }
 } else {
-    echo "0 results";
+    echo "<span class='column'>Nothing yet here!</span>";
 }
 $conn->close();
 
