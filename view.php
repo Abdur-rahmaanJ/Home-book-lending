@@ -4,9 +4,10 @@
 	<title>
 		
 	</title>
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
-<a href="update.php">update db</a><br>
+<a class="update-link" href="update.php">Update Database</a><br>
 <?php
 
 session_start();
@@ -24,10 +25,10 @@ $result = $conn->query($sql2);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo $row["id"] . " " . $row["name"] . " " . $row["isbn"] . " " . $row["friend"] . "<br>";
+        echo "<span class='column'>" . $row["id"] . " &raquo; " . $row["name"] . " &raquo; " . $row["isbn"] . " &raquo; " . $row["friend"] . "</span><br>";
     }
 } else {
-    echo "0 results";
+    echo "<span class='column'>Nothing yet here!</span>";
 }
 $conn->close();
 
