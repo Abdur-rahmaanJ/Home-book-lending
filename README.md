@@ -29,7 +29,8 @@ CREATE TABLE books (
 </pre>
 
 ## Contacts
-- Init Developer : Abdur-Rahmaan Janhangeer
+- Init Developer : [Abdur-Rahmaan Janhangeer](https://github.com/Abdur-rahmaanJ)
+- Security : [maz](https://github.com/mynameismaz)
 
 ## Target | Time
 - 25 02 HTML ready
