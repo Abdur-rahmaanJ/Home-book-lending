@@ -8,6 +8,9 @@
 
 - MySQL (https://dev.mysql.com/downloads/workbench/)
 
+## CSS rules
+- using BEM [here](https://abdurrahmaanjanhangeer.wordpress.com/2018/02/18/bem-simple-css-naming-approach/)
+
 ## Todo
 - menupage
 - operations page
