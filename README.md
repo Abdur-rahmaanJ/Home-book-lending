@@ -17,7 +17,7 @@ PHP > php -S localhost:8000
 SQL create table in db
 <pre>
 CREATE TABLE books (
-    ID int NOT NULL,
+    ID int NOT NULL auto_increment,
     name varchar(255) NOT NULL,
     isbn varchar(255),
     friend varchar(255),
