@@ -17,7 +17,7 @@
 
 ## Quickstart
 PHP > php -S localhost:8000
-SQL create table in db
+SQL create table in db named 'books_lending'
 <pre>
 CREATE TABLE books (
     ID int NOT NULL auto_increment,
@@ -30,7 +30,7 @@ CREATE TABLE books (
 
 ## Contacts
 - Init Developer : [Abdur-Rahmaan Janhangeer](https://github.com/Abdur-rahmaanJ)
-- Security : [maz](https://github.com/mynameismaz)
+- Other : [maz](https://github.com/mynameismaz)
 
 ## Target | Time
 - 25 02 HTML ready

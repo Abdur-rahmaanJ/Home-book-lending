@@ -6,7 +6,7 @@
     </title>
     <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
-<body>
+<body style="background-color: black; color:white;">
     <?php
 
         if(isset($_POST['update'])) {
@@ -33,22 +33,23 @@
             $name = $_POST['name'];
             $isbn = $_POST['isbn'];
             $friend = $_POST['friend'];
-
+            //echo "---".$name.'-'.$isbn.'-'.$friend ;
             // If fields are not empty.
             if(!empty($name) && !empty($isbn) && !empty($friend)) {
 
-                // Prepare query.
+                 // Prepare query.
                 $sql = $mysqli->prepare("INSERT INTO $table (name, isbn, friend) VALUES (?, ?, ?)");
                 
                 // Bind parameters.
-                $sql->bind_param('sis', $name, $isbn, $friend);
+                $sql->bind_param('sss', $name, $isbn, $friend); //sss : string string string
                 
                 // If SQL query works fine, execute it, otherwise... show me the error.
                 if($sql) {
                     $sql->execute();
                     echo "<span class='record-created'>New record created successfully &raquo; <a href='view.php'>Return to Table</a></span>";
                 } else {
-                    echo "Error: " . $mysqli->error;
+                    $error = $mysqli->errno . ' ' . $mysqli->error;
+                    echo $error; 
                 }
                 
                 // Close the connection.
@@ -67,8 +68,8 @@
             
             <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post" class="login card-panel">
                 <div class="form-group">
-                    <label for="name" class="sr-only">Your Name</label>
-                    <input type="text" name="name" placeholder="Your Name" />
+                    <label for="name" class="sr-only">Book Name</label>
+                    <input type="text" name="name" placeholder="Book Name" />
                 </div>
                 <div class="form-group">
                     <label for="name" class="sr-only">Your Friend</label>
