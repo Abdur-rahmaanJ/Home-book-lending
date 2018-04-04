@@ -27,7 +27,7 @@ CREATE TABLE `books` (
   `owner` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)
 
 CREATE TABLE `user` (
   `id` int NOT NULL auto_increment,
@@ -35,7 +35,7 @@ CREATE TABLE `user` (
   `password` text NOT NULL,
   `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)
 </pre>
 
 First you'll need to register a account for yourself first before you can enter the program
