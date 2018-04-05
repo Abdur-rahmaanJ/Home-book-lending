@@ -13,6 +13,29 @@ body {
 	background-color: #1e1e1e;
 }
 
+#nav {
+	top:0;
+	left:0;
+	font-style: none;
+	background:grey;
+}
+
+#header {
+	position:fixed;
+	top:20px;
+	left:15%;
+	font-style: none;
+}
+
+#header a {
+	display:inline;
+	font-size:150%;
+	margin-left:50px;
+	font-style: none;
+	font-family:monospace;
+	color:yellow;
+}
+
 .sr-only {
 	display: none;
 }
@@ -71,6 +94,28 @@ body {
 
 .update-link,
 .record-created {
-	margin: 50px 0;
 	display: inline-block;
+}
+
+table,th, td {
+	border: 2px solid white;
+	font-size:120%;
+	color:deepskyblue;
+}
+
+.update-link a{
+	vertical-align: baseline;
+	margin-top:-300px;
+}
+
+.title {
+	position:absolute;
+	top:20%;
+	left:45%;
+	font-size: 2em;
+	color: #fff;
+}
+
+table {
+	margin-top:-200px;
 }

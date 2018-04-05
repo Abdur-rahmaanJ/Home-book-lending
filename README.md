@@ -19,14 +19,26 @@
 PHP > php -S localhost:8000
 SQL create table in db named 'books_lending'
 <pre>
-CREATE TABLE books (
-    ID int NOT NULL auto_increment,
-    name varchar(255) NOT NULL,
-    isbn varchar(255),
-    friend varchar(255),
-    PRIMARY KEY (ID)
+CREATE TABLE `books` (
+  `id` int NOT NULL auto_increment,
+  `name` varchar(100) NOT NULL,
+  `isbn` varchar(100) DEFAULT NULL,
+  `friend` varchar(100) DEFAULT NULL,
+  `owner` text NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE `user` (
+  `id` int NOT NULL auto_increment,
+  `username` varchar(50) NOT NULL,
+  `password` text NOT NULL,
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
 );
 </pre>
+
+You'll need to register an account for yourself first before you can use the program
 
 ## Contacts
 - Init Developer : [Abdur-Rahmaan Janhangeer](https://github.com/Abdur-rahmaanJ)

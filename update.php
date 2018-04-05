@@ -2,26 +2,25 @@
 <html>
 <head>
     <title>
-        
+        Home Book Lending - Add Records
     </title>
     <link rel="stylesheet" type="text/css" href="styles/main.css">
+	<script src="libs/jquery.js"></script>
+	<script>
+		$(function(){
+			$("#header").load("header.html");
+		});
+	</script>
 </head>
 <body style="background-color: black; color:white;">
+	<div id='header'>
+		
+	</div>
     <?php
-
+	include("conn.php");
+	include("auth.php");
         if(isset($_POST['update'])) {
             
-            session_start();
-            
-            // Database connection data.
-            $servername = "localhost";
-            $username = $_SESSION['username'];
-            $password = $_SESSION['password'];
-            $dbname = "books_lending";
-            $table = "books";
-
-            // Connect to mysqli.
-            $mysqli = new mysqli($servername, $username, $password, $dbname);
 
             // Check connection.
             if (mysqli_connect_errno()) {
@@ -33,22 +32,31 @@
             $name = $_POST['name'];
             $isbn = $_POST['isbn'];
             $friend = $_POST['friend'];
+			$owner = $_SESSION['username'];
+			
+			// make the input secure
+			$name = test_input($name);
+            $isbn = test_input($isbn);
+            $friend = test_input($friend);
+			$owner = test_input($owner);
             //echo "---".$name.'-'.$isbn.'-'.$friend ;
             // If fields are not empty.
-            if(!empty($name) && !empty($isbn) && !empty($friend)) {
+            if(!empty($name) && !empty($isbn) && !empty($friend) && !empty($owner)) {
 
                  // Prepare query.
-                $sql = $mysqli->prepare("INSERT INTO $table (name, isbn, friend) VALUES (?, ?, ?)");
+                $sql = $conn->prepare("INSERT INTO books (name, isbn, friend,owner) VALUES (?, ?, ?,?)");
                 
                 // Bind parameters.
-                $sql->bind_param('sss', $name, $isbn, $friend); //sss : string string string
+                $sql->bind_param('ssss', $name, $isbn, $friend,$owner); //sss : string string string
                 
                 // If SQL query works fine, execute it, otherwise... show me the error.
                 if($sql) {
                     $sql->execute();
-                    echo "<span class='record-created'>New record created successfully &raquo; <a href='view.php'>Return to Table</a></span>";
+                    echo "
+						<span class='record-created'>New record created successfully </span>
+						";
                 } else {
-                    $error = $mysqli->errno . ' ' . $mysqli->error;
+                    $error = $conn->errno . ' ' . $conn->error;
                     echo $error; 
                 }
                 
