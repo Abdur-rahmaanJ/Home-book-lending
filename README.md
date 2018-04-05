@@ -38,7 +38,7 @@ CREATE TABLE `user` (
 );
 </pre>
 
-First you'll need to register a account for yourself first before you can enter the program
+You'll need to register an account for yourself first before you can use the program
 
 ## Contacts
 - Init Developer : [Abdur-Rahmaan Janhangeer](https://github.com/Abdur-rahmaanJ)
