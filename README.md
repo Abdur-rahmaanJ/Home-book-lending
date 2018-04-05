@@ -41,8 +41,9 @@ CREATE TABLE `user` (
 You'll need to register an account for yourself first before you can use the program
 
 ## Contacts
-- Init Developer : [Abdur-Rahmaan Janhangeer](https://github.com/Abdur-rahmaanJ)
-- Other : [maz](https://github.com/mynameismaz)
+- [Abdur-Rahmaan Janhangeer](https://github.com/Abdur-rahmaanJ)
+- [maz](https://github.com/mynameismaz)
+- [Leon](https://github.com/leonlit)
 
 ## Target | Time
 - 25 02 HTML ready
